@@ -1,0 +1,6 @@
+seed.py
+get_supabase_credentials.py
+venv
+.python-version
+__pycache__
+.env

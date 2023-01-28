@@ -1,0 +1,2 @@
+insert into public.companies (name, email, phone, website, logo, size, description, data) values ('Empylo', 'admin@empylo.com', '+2368012345678', 'https://empylo.com', 'https://empylo.com/logo.png', 2, 'Empylo is a data company', '{"address": "Empylo address"}');
+insert into public.teams (name, description, data, company_id) values ('Operations', 'We lounge all day.', '{"desk": "Hot Desk"}', (select id from public.companies where name = 'Empylo'));
