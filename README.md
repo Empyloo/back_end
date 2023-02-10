@@ -2,6 +2,10 @@
 Empylo backend code base.
 
 ## Getting Started
+
+Make sure to have docker running on your machine.
+`supabase start` will start the supabase server and the postgres database.
+
 Diff between remote and local
 ```
 supabase db diff --use-migra -f new_migration
@@ -43,3 +47,19 @@ command through a flag.
 supabase db link --project-ref <project_ref>
 supabase db push --p <password>
 ```
+
+## User Management CLI Tool
+
+### Usage
+
+This CLI tool provides two commands:
+
+### Create User
+
+To create a user, run the following command:
+`python bin/manage_user.py create`
+
+### Delete User
+
+To delete a user, run the following command:
+`python bin/manage_user.py delete`
