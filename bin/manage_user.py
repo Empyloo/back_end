@@ -6,6 +6,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+TEST_USER_EMAIL = os.getenv("TEST_USER_EMAIL")
+TEST_USER_PASSWORD = os.getenv("TEST_USER_PASSWORD")
+
 url = os.getenv("SUPABASE_URL") + "/auth/v1/signup"
 headers = {
     "apikey": os.getenv("ANON_KEY"),
@@ -28,8 +31,8 @@ def cli():
 
 
 @cli.command()
-@click.option("--email", default="someone@email.com", help="Email of the user to create.")
-@click.option("--password", default="password123", help="Password for the user.")
+@click.option("--email", default=TEST_USER_EMAIL, help="Email of the user to create.")
+@click.option("--password", default=TEST_USER_EMAIL, help="Password for the user.")
 def create(email, password):
     response = requests.get(os.getenv(
         "SUPABASE_URL") + "/rest/v1/companies?select=id&name=eq.Empylo", headers=headers)
@@ -50,7 +53,7 @@ def create(email, password):
 
 
 @cli.command()
-@click.option("--email", default="someone@email.com", help="Email of the user to delete.")
+@click.option("--email", default=TEST_USER_EMAIL, help="Email of the user to delete.")
 def delete(email):
     user = get_user_by_email(email)
     if user is None:

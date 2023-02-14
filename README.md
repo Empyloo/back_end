@@ -28,11 +28,11 @@ Apply the migration
 ```
 supabase db reset
 ```
----
+
 This updates the local database adding the trigger or whatever new changes you made.
 **Note:** This is when you would run the app locally connecting to the local 
 database and test the changes.
----
+<br>
 
 To apply the migration to the remote database
 ```
@@ -46,6 +46,14 @@ command through a flag.
 ```
 supabase db link --project-ref <project_ref>
 supabase db push --p <password>
+```
+
+### Dump Remote Schema
+
+To dump the remote schema, run the following command:
+
+```
+supabase db dump -f <file_name.sql>
 ```
 
 ## User Management CLI Tool

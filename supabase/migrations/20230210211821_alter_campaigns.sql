@@ -1,0 +1,1 @@
+ALTER TABLE public.campaigns ALTER COLUMN end_date SET DEFAULT NULL;
