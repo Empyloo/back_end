@@ -1,0 +1,1 @@
+ALTER TABLE campaigns RENAME COLUMN start_date TO next_run_time;
