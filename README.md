@@ -2,9 +2,16 @@
 Empylo backend code base.
 
 ## Getting Started
+To upgrade `brew upgrade supabase`
 
 Make sure to have docker running on your machine.
 `supabase start` will start the supabase server and the postgres database.
+`supabase start --ignore-health-check` will start the supabase server and the postgres database without checking the health of the database.
+
+`supabase link --project-ref <project_ref>` will link the local database to the remote database.
+
+Dump the schema from the remote database to the local database.
+`supabase db dump -f <file_name.sql>`
 
 Diff between remote and local
 ```
