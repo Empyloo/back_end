@@ -45,7 +45,13 @@ To apply the migration to the remote database
 ```
 supabase db push
 ```
+**Note:** If the push fails, you can make changes to the migration file and `supabase db reset` to reset the local database and try `supabase db push` again.
 
+If the `push` is successful but issues arise, such as missing procedures, functions, tables or columns, a new migration file must be created. Any previously created elements should be dropped and modifications made in the new migration file until the issues are resolved.
+
+<br>
+
+---
 ### Linking to remote database and pushing changes
 
 The supabase project has to be linked and the password is added to the push
